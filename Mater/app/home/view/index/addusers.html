@@ -4,23 +4,23 @@
 
         <!--<form id="itemcheac">-->
             <div class="je-form-item">
-                <label class="je-label je-f14">用户名</label>
+                <label class="je-label je-f14">Имя пользователя</label>
                 <div class="je-inputbox">
-                    <input type="text" id="username" autocomplete="off" placeholder="请输入" class="je-input">
+                    <input type="text" id="username" autocomplete="off" placeholder="Введите имя" class="je-input">
                 </div>
             </div>
 
             <div class="je-form-item">
-                <label class="je-label je-f14">密码</label>
+                <label class="je-label je-f14">Пароль</label>
                 <div class="je-inputbox">
-                    <input type="text" id="password" autocomplete="off" placeholder="请输入" class="je-input">
+                    <input type="text" id="password" autocomplete="off" placeholder="Введите пароль" class="je-input">
                 </div>
             </div>
 
             <div class="je-form-item je-f14">
                 <label class="je-label je-f14"></label>
-                <button class="je-btn" id="btnIframe">添加</button>
-                <button class="je-btn je-bg-native">重置</button>
+                <button class="je-btn" id="btnIframe">Добавить</button>
+                <button class="je-btn je-bg-native">Пособия</button>
             </div>
         <!--</form>-->
     
@@ -55,7 +55,7 @@ jeui.use(["jquery","jeBox","jeCheck","jeSelect"],function () {
                 if(data.ret == 0)
                     jeBox.alert(data.message);
                 else{
-                    parent.jeBox.msg('添加成功。');
+                    parent.jeBox.msg('Успешно добавлен');
                     setTimeout(function(){
                     	parent.location.reload()
                     },1000);
