@@ -9,10 +9,10 @@
             	<each "$list as $v">
             		<option value="{$v['id']}" <if "$_GET['id']==$v['id']">selected</if>>{$v['name']} - {$v['server_cname']} - {$v['server_ip']} - {$v['server_port']}</option>
 				</each>
-                <!--<option value="2" selected>服务器2</option>-->
+                <!--<option value="2" selected>Сервер 2</option>-->
             </select>
-            <button class="je-btn" id="addart"><i class="je-icon je-f20">&#xe66e;</i> 添加账号</button>
-            <button class="je-btn je-bg-red" onclick="getTheCheckBoxValue()"><i class="je-icon je-f20">&#xe63e;</i> 批量删除</button>
+            <button class="je-btn" id="addart"><i class="je-icon je-f20">&#xe66e;</i> Добавить номер счета</button>
+            <button class="je-btn je-bg-red" onclick="getTheCheckBoxValue()"><i class="je-icon je-f20">&#xe63e;</i> Удаление партии</button>
             <button class="je-btn je-bg-orange" onclick="location.reload()"><i class="je-icon je-f20">&#xe601;</i></button>
 
             <input class="je-input" value="KEY: {$server_key}"> 
@@ -23,11 +23,11 @@
         <tr>
             <th width="5%"><input type="checkbox" name="checkbox" id="gocheck" jename="chunk"></th>
             <th width="5%" align="left">ID</th>
-            <th width="15%">用户名</th>
-            <th width="15%">密码</th>
-            <th width="20%">本地IP</th>
-            <th width="20%">备注</th>
-            <th width="20%">操作</th>
+            <th width="15%">Имя пользователя</th>
+            <th width="15%">Пароль</th>
+            <th width="20%">Локальный IP</th>
+            <th width="20%">Примечание</th>
+            <th width="20%">Статус</th>
         </tr>
         </thead>
         <tbody>
@@ -53,11 +53,11 @@
 
 	function getTheCheckBoxValue(){
 
-        parent.jeBox.msg('是否删除？', {
+        parent.jeBox.msg('Удалить?', {
             time: 0 ,
             button: [ 
                 {
-                    name: '删除',
+                    name: 'Да',
                     callback:function(index){
                         jeBox.close(index);
                         var test = $("input[name='checkbox']:checked");
@@ -80,7 +80,7 @@
                                 if(data.ret == 0)
                                     parent.jeBox.alert(data.message);
                                 else{
-                                    parent.jeBox.msg('删除成功。');
+                                    parent.jeBox.msg('Удалено успешно.');
                                     setTimeout(function(){
                                         location.reload()
                                     },1000);
@@ -90,7 +90,7 @@
 
                     }
                 },{
-                    name: '取消'
+                    name: 'Нет'
                 }
             ]
         });
@@ -138,7 +138,7 @@
         $(".checkbox").jeCheck({jename:"switch"});
         $("#newCheck").jeCheck({
             jename:"chunk",
-            attrName:[false,"勾选"], 
+            attrName:[false,"Проверить"], 
             itemfun: function(elem,bool) {
             	console.log(elem)
                 console.log(bool)
@@ -174,7 +174,7 @@
                                     location.reload()
                             },1000);
                         }else{
-                            jeBox.msg('操作成功。');
+                            jeBox.msg('Проверено');
                         }
                     }
                 });
