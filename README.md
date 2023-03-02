@@ -20,7 +20,7 @@ location /{
 
 Псевдостатический Apache (.htaccess настроен в папку public)：
 
-``
+```
 <IfModule mod_rewrite.c>
 
 RewriteEngine on
