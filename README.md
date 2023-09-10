@@ -38,7 +38,7 @@ RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
 
 # Установите curl
 
-'apt-get install curl-y`
+`apt-get install curl-y`
 
 # Установите запланированные задачи (выполнять один раз в 5 минут)
 
@@ -76,7 +76,7 @@ RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
 
 Выполнение в debian:
 
-'iptables-save>/etc/iptables`
+`iptables-save>/etc/iptables`
 
 # Загрузите этот файл：
 
